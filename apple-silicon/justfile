@@ -1,0 +1,8 @@
+ld:
+    ld -o helloworld helloworld.o \
+    -lSystem \
+    -syslibroot `xcrun -sdk macosx --show-sdk-path` \
+    -e _start \
+    -arch arm64
+as:
+    as -o HelloWorld.o HelloWorld.s
