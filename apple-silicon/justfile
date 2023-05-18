@@ -1,8 +1,20 @@
+# link
 ld:
     ld -o helloworld helloworld.o \
     -lSystem \
     -syslibroot `xcrun -sdk macosx --show-sdk-path` \
     -e _start \
     -arch arm64
+# compile
 as:
     as -o HelloWorld.o HelloWorld.s
+
+# compile and link
+build: ld && as
+
+# execute
+run:
+    ./helloworld
+
+# compile, link and execute
+go: build && run
